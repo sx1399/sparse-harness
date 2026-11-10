@@ -1,0 +1,16 @@
+{
+    "tasks_count": 5,
+    "dense_baseline": {
+        "accuracy_pct": 40.0,
+        "total_tokens": 1010,
+        "total_flops": 16160000000000
+    },
+    "sparse_verifier_harness": {
+        "accuracy_pct": 100.0,
+        "total_tokens": 900,
+        "total_flops": 695970000000
+    },
+    "accuracy_improvement_pct": 60.0,
+    "token_savings_pct": 10.89,
+    "compute_reduction_factor": 23.22
+}

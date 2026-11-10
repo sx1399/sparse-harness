@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparse-harness"
+version = "0.1.0"
+description = "A brain-inspired dynamic routing framework for compute-efficient, zero-bloat AI execution."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Independent Research" }
+]
+dependencies = [
+    "pydantic>=2.0.0",
+    "tiktoken>=0.5.0",
+    "torch>=2.0.0",
+    "transformers>=4.40.0"
+]
+
+[tool.setuptools.packages.find]
+include = ["sparse_harness*"]
+
+[project.scripts]
+sparse-harness = "sparse_harness.cli:main"

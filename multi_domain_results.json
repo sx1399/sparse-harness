@@ -1,0 +1,12 @@
+{
+    "dense_total_tokens": 1051,
+    "sparse_total_tokens": 215,
+    "token_reduction_pct": 79.54,
+    "avg_tokens_per_task": 71.7,
+    "dense_flops": 16816000000000,
+    "sparse_flops": 44050000000,
+    "flop_reduction_factor": 381.75,
+    "dense_accuracy_pct": 66.66666666666666,
+    "sparse_accuracy_pct": 100.0,
+    "peak_ram_mb": 38.81
+}

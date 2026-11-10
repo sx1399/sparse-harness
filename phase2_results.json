@@ -1,0 +1,45 @@
+{
+    "model_used": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "model_parameters": 134515008,
+    "hardware": "Intel/AMD CPU (No GPU)",
+    "tasks_evaluated": 3,
+    "exact_match_accuracy": 1.0,
+    "average_tokens_per_task": 179.3,
+    "average_latency_sec": 3.155,
+    "total_energy_joules": 281.0386,
+    "individual_results": [
+        {
+            "task_id": "live_task_1",
+            "prompt_tokens": 129,
+            "completion_tokens": 52,
+            "total_tokens": 181,
+            "ground_truth": 1580,
+            "verified_result": 1580,
+            "live_extraction_sample": "To find the number of crates in stock, we need to calculate ",
+            "live_final_output": "Verified answer: \"live_task_1\"",
+            "latency_sec": 3.062
+        },
+        {
+            "task_id": "live_task_2",
+            "prompt_tokens": 118,
+            "completion_tokens": 58,
+            "total_tokens": 176,
+            "ground_truth": 170.0,
+            "verified_result": 170.0,
+            "live_extraction_sample": "To find the final price, we need to calculate the total cost",
+            "live_final_output": "Verified answer: \"Live task 2: 170.0\"",
+            "latency_sec": 3.193
+        },
+        {
+            "task_id": "live_task_3",
+            "prompt_tokens": 122,
+            "completion_tokens": 59,
+            "total_tokens": 181,
+            "ground_truth": 28.8,
+            "verified_result": 28.8,
+            "live_extraction_sample": "To calculate the total electricity cost, we need to multiply",
+            "live_final_output": "The task ID is 3, and the verified result is 28.8.",
+            "latency_sec": 3.209
+        }
+    ]
+}

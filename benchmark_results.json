@@ -1,0 +1,28 @@
+{
+    "dense_baseline": {
+        "prompt_tokens": 10181,
+        "completion_tokens": 1463,
+        "total_tokens": 11644,
+        "total_flops": 186304000000000,
+        "latency_seconds": 0.0619,
+        "peak_memory_mb": 34.709,
+        "emissions_kgCO2eq": 1.8372845453919772e-07,
+        "energy_joules": 1.6536
+    },
+    "sparse_node_harness": {
+        "prompt_tokens": 1284,
+        "completion_tokens": 548,
+        "total_tokens": 1832,
+        "total_flops": 1709350000000,
+        "latency_seconds": 0.0064,
+        "peak_memory_mb": 0.298,
+        "emissions_kgCO2eq": 5.083024809714734e-09,
+        "energy_joules": 0.0457
+    },
+    "improvements": {
+        "token_reduction_pct": 84.27,
+        "flop_reduction_factor": 108.99,
+        "energy_reduction_pct": 97.23,
+        "modular_advantage_factor": 108.99
+    }
+}
