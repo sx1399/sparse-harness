@@ -1,6 +1,7 @@
 # Beyond Dense Scaling: Overcoming the Inference Wall via Sparse Modular Node Graphs and Brain-Inspired Dynamic Routing
 
-**Author:** Independent Research  
+**Author:** Saif Al-Musawi (saifalmusawi1308@gmail.com)  
+**Affiliation:** Unaffiliated Researcher  
 **Date:** November 2026  
 **Status:** Working Draft / Preprint  
 
