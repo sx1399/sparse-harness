@@ -1,6 +1,6 @@
 # Sparse Node Harness (`sparse-harness`)
 
-[![Preprint Paper](https://img.shields.io/badge/Paper-Preprint-blue.svg)](paper_draft.md)
+[![Read Paper PDF](https://img.shields.io/badge/Read%20Paper-PDF%20Download-red?style=for-the-badge)](paper.pdf) [![Read Markdown](https://img.shields.io/badge/Read%20Preprint-Markdown-blue?style=for-the-badge)](paper_draft.md)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9+-darkblue.svg)](https://python.org)
 [![Inference Compute](https://img.shields.io/badge/Compute_Savings-75x--380x-emerald.svg)](#empirical-benchmarks)
