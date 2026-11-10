@@ -76,7 +76,7 @@ All metrics were empirically evaluated and tracked using physical hardware profi
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/sparse-harness.git
+git clone https://github.com/sx1399/sparse-harness.git
 cd sparse-harness
 
 # Install in editable mode
