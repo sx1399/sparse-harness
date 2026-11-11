@@ -1,11 +1,10 @@
 """
 Sparse Node Harness CLI:
-Provides automated benchmarking, replication, and telemetry tools.
+Provides automated benchmarking, replication, and local API gateway serving.
 """
 
 import sys
 import argparse
-import json
 from .core.engine import SparseEngine
 from .nodes.slm_node import SLMNode
 from .nodes.tool_node import ToolNode
@@ -16,13 +15,9 @@ def run_benchmark_cli():
     print("=" * 75)
     
     engine = SparseEngine()
-    
-    # Register micro-nodes
     engine.register_node(SLMNode(node_id="intent_parser", parameter_count=135_000_000))
     engine.register_node(ToolNode(node_id="symbolic_calculator", tool_fn=lambda s: 42.0))
     engine.register_node(SLMNode(node_id="response_synthesizer", parameter_count=500_000_000))
-    
-    # Register dormant nodes to prove zero FLOP allocation
     engine.register_node(SLMNode(node_id="code_security_auditor", parameter_count=7_000_000_000))
     engine.register_node(SLMNode(node_id="legal_contract_auditor", parameter_count=3_000_000_000))
     
@@ -41,17 +36,32 @@ def run_benchmark_cli():
     print("=" * 75)
     print("Status: Verified & Operational.")
 
+def run_serve_cli(host: str = "127.0.0.1", port: int = 8000):
+    print("=" * 75)
+    print(f"SPARSE NODE HARNESS: LAUNCHING OPENAI-COMPATIBLE API GATEWAY")
+    print(f"Listening on: http://{host}:{port}/v1")
+    print(f"API Endpoint: http://{host}:{port}/v1/chat/completions")
+    print("=" * 75)
+    from .gateway.proxy import start_server
+    start_server(host=host, port=port)
+
 def main():
     parser = argparse.ArgumentParser(description="Sparse Node Harness CLI")
     subparsers = parser.add_subparsers(dest="command")
     
     subparsers.add_parser("benchmark", help="Run automated consistency benchmark")
+    serve_parser = subparsers.add_parser("serve", help="Launch OpenAI-compatible API gateway proxy")
+    serve_parser.add_argument("--host", default="127.0.0.1", help="Host address (default: 127.0.0.1)")
+    serve_parser.add_argument("--port", type=int, default=8000, help="Port number (default: 8000)")
+    
     args = parser.parse_args()
     
-    if args.command == "benchmark" or len(sys.argv) == 1:
+    if args.command == "benchmark":
         run_benchmark_cli()
+    elif args.command == "serve":
+        run_serve_cli(host=args.host, port=args.port)
     else:
-        parser.print_help()
+        run_benchmark_cli()
 
 if __name__ == "__main__":
     main()

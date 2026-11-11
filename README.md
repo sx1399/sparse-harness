@@ -88,6 +88,35 @@ pip install -e ".[profiling]"
 
 ---
 
+## ⚡ OpenAI-Compatible Drop-In API Gateway
+
+Run `sparse-harness` as an API reverse proxy. Any client, framework (LangChain, AutoGen, CrewAI), or SDK can point to it by changing **one single line**:
+
+```bash
+# 1. Start the local gateway (Listens on port 8000)
+sparse-harness serve --port 8000
+```
+
+```python
+# 2. Use with the standard OpenAI Python client:
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="http://localhost:8000/v1",
+    api_key="sk-local"  # Any dummy key
+)
+
+response = client.chat.completions.create(
+    model="sparse-harness-auto",
+    messages=[
+        {"role": "user", "content": "Calculate 15% discount on $200 and return net price."}
+    ]
+)
+print(response.choices[0].message.content)
+```
+
+---
+
 ## 10-Second Quickstart
 
 ```python
